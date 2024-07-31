@@ -35,7 +35,11 @@ $ npm install
 ## Starting Docker DB
 
 ```bash
+# create DB
 $ docker-compose up -d
+
+# Import data from Json file
+$ mongoimport --db alten-shop --collection products --file src/assets/products.json --jsonArray
 ```
 
 ## Running the app
