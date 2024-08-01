@@ -22,18 +22,18 @@ export class ProductsProviderService {
     return this.productModel.find().exec();
   }
 
-  async findOne(id: string) {
-    return this.productModel.findOne({ id: id }).exec();
+  async findOne(_id: string) {
+    return await this.productModel.findById(_id).exec();
   }
 
-  async update(id: string, updateProductDto: UpdateProductDto) {
-    return this.productModel
-      .findOneAndUpdate({ id: id }, updateProductDto, { new: true })
-      .exec();
+  async update(_id: string, updateProductDto: UpdateProductDto) {
+    return await this.productModel.findByIdAndUpdate(_id, updateProductDto, {
+      new: true,
+    });
   }
 
-  async delete(id: string) {
-    return this.productModel.findOneAndDelete({ id: id }).exec();
+  async delete(id: number) {
+    return await this.productModel.findOneAndDelete({ id: id }).exec();
   }
 
   async deleteAll() {

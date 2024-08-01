@@ -15,12 +15,12 @@ export class ProductsService {
     return this.productProvider.findAll();
   }
 
-  findOne(id: number) {
-    return this.productProvider.findOne(id);
+  findOne(_id: string) {
+    return this.productProvider.findOne(_id);
   }
 
-  update(id: number, updateProductDto: UpdateProductDto) {
-    return this.productProvider.update(id, updateProductDto);
+  update(_id: string, updateProductDto: UpdateProductDto) {
+    return this.productProvider.update(_id, updateProductDto);
   }
 
   delete(id: number) {
